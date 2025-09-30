@@ -65,7 +65,7 @@ graph TD
 ## 🛠️ Tech Stack
 
 * **Agent Framework**: Microsoft AutoGen
-* **LLM Provider**: Ollama (running Llama 3.1)
+* **LLM Provider**: OpenAI
 * **Web Framework**: Streamlit
 * **Code Execution**: Docker
 * **Core Language**: Python
@@ -75,15 +75,15 @@ graph TD
 ```
 01-analyser-GPT-Modular-architecture/
 ├── agents/                  # Definitions for the AutoGen agents
-│   ├── code_executor_agent.py
-│   └── data_analyser_agent.py
+│   ├── Code_executor_agent.py
+│   └── Data_analyser_agent.py
 ├── config/                  # Configuration files
 │   ├── constants.py
 │   └── docker_util.py
 ├── model/                   # LLM client setup
-│   └── ollama_model_clint.py
+│   └── openai_model_client.py
 ├── prompts/                 # System messages and prompts for agents
-│   └── data_analyzer_Smessages.py
+│   └── data_analyzer_message.py
 ├── teams/                   # Definition of the agent group/team
 │   └── analyzer_gpt.py
 ├── temp/                    # Working directory for Docker, stores uploaded data and outputs
@@ -102,16 +102,14 @@ Follow these steps to set up and run Analyzer GPT on your local machine.
 
 * Python 3.8+
 * Docker Desktop (Ensure the Docker engine is running)
-* Ollama (Install and ensure it is running)
+
 
 ### Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/MDalamin5/End-to-End-Agentic-Ai-Automation-Lab
-cd 07-End-To-End-Projects-Autogen
-cd 01-analyser-GPT-Modular-architecture
+git clone https://github.com/Supercreativeneets/ChatGPT-Analyst
 ```
 
 Set up a Python virtual environment:
@@ -135,12 +133,6 @@ docker
 pip install -r requirements.txt
 ```
 
-Pull the LLM model via Ollama:
-
-```bash
-ollama pull llama3.1
-```
-
 ### Running the Application
 
 ```bash
@@ -158,9 +150,6 @@ Upload a CSV file, type your data analysis task into the chat box, and hit Enter
 * **More Data Sources**: Extend support to SQL, APIs, and more.
 * **Advanced Agent Skills**: Integrate tools like web search for external data.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue to discuss any new features or bug fixes before submitting a pull request.
 
 ## 📄 License
 
