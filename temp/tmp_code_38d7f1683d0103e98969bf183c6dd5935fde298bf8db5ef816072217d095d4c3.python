@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Step 1: Load the CSV file
+df = pd.read_csv('iris.csv')
+
+# Step 2: Get the count of each type of flower
+flower_counts = df['species'].value_counts()
+
+# Step 3: Plot the graph
+plt.figure(figsize=(10, 6))
+sns.barplot(x=flower_counts.index, y=flower_counts.values)
+plt.title('Types of Flowers in Iris Dataset')
+plt.xlabel('Flower Type')
+plt.ylabel('Count')
+plt.savefig('output.png')
+plt.close()
+
+print("Bar graph of flower types has been saved as output.png.")

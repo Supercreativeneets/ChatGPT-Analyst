@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+data = pd.read_csv('data.csv')
+
+# Check the first few rows to understand how the survivor data is represented
+print(data.head())
+
+# Count the number of survivors and non-survivors
+survivor_counts = data['Survived'].value_counts()
+
+# Plotting the bar graph
+plt.bar(survivor_counts.index, survivor_counts.values, tick_label=['Non-survivor', 'Survivor'])
+plt.xlabel('Category')
+plt.ylabel('Count')
+plt.title('Number of Survivors and Non-Survivors')
+plt.savefig('output.png')
+
+print("Graph plotted and saved as output.png")

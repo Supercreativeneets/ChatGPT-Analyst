@@ -1,0 +1,8 @@
+import pandas as pd
+
+# Load the CSV file to check its structure
+df = pd.read_csv('iris.csv')
+
+# Display the first few rows and column names to debug the issue
+print(df.head())
+print(df.columns)

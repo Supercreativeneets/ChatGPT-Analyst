@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Read the CSV file
+data = pd.read_csv('data.csv')
+
+# Analyze survival rate by different categories
+survival_by_class = data.groupby('Pclass')['Survived'].mean()
+survival_by_gender = data.groupby('Sex')['Survived'].mean()
+survival_by_embarked = data.groupby('Embarked')['Survived'].mean()
+
+# Print results
+print("Survival Rate by Class:\n", survival_by_class)
+print("\nSurvival Rate by Gender:\n", survival_by_gender)
+print("\nSurvival Rate by Embarked:\n", survival_by_embarked)
+
+print("\nAnalysis Complete.")
